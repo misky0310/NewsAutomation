@@ -16,6 +16,8 @@ def clean_content(content):
             content = content.replace(phrase, "")
     return content.strip()
 
+
+
 def get_news():
     feed = feedparser.parse("https://venturebeat.com/category/ai/feed/")
     top_links = []
@@ -35,9 +37,10 @@ def get_news():
         top_links.append({
             "title": article.title,
             "content": content,
+            "url":url
         })
 
-        return top_links
+    return top_links
 
 
 
