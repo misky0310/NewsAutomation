@@ -19,6 +19,7 @@ def clean_content(content):
 
 
 def get_news():
+    print("Fetching news from venturebeat.com...")
     feed = feedparser.parse("https://venturebeat.com/category/ai/feed/")
     top_links = []
     for article in feed.entries[:7]:
@@ -39,7 +40,7 @@ def get_news():
             "content": content,
             "url":url
         })
-
+    print("News fetched successfully from VentureBeats.")
     return top_links
 
 
